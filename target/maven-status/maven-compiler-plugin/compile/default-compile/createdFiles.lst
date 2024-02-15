@@ -1,0 +1,13 @@
+com/alexdev/app/springbootdatajpa/services/impl/ClientService.class
+com/alexdev/app/springbootdatajpa/controllers/HomeController.class
+com/alexdev/app/springbootdatajpa/controllers/ClientController.class
+com/alexdev/app/springbootdatajpa/services/impl/UploadFileService.class
+com/alexdev/app/springbootdatajpa/util/PageItem.class
+com/alexdev/app/springbootdatajpa/dao/IClientRepository.class
+com/alexdev/app/springbootdatajpa/services/IUploadFileService.class
+com/alexdev/app/springbootdatajpa/SpringBootDataJpaApplication.class
+com/alexdev/app/springbootdatajpa/util/Paginator.class
+com/alexdev/app/springbootdatajpa/MVCSetting.class
+com/alexdev/app/springbootdatajpa/models/Client.class
+com/alexdev/app/springbootdatajpa/services/IClientService.class
+com/alexdev/app/springbootdatajpa/util/UtilPath.class

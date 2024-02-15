@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{layout/global :: head}"></head>
+
+    <body>
+        <header th:replace="~{layout/global :: header}"></header>
+
+        <div class="container text-center">
+            <h1 th:if="${title.contains('Form')}" th:text="${title}"></h1>
+
+            <div th:object="${client}" th:remove="tag">
+                <div th:if="${#fields.hasErrors('*')}">
+                    <h1 class="text-danger" th:text="${title}"></h1>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center m-2">
+                <form style="background-color: #DADADA;" class="w-45 shadow-lg p-3 mb-5 rounded" th:action="@{/form}" th:object="${client}" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label class="mt-3" for="name">Name</label>
+                    </div>
+                    <div>
+                        <input class="form-control text-center"
+                               id="name"
+                               type="text"
+                               placeholder="Rod"
+                               th:field="*{name}"
+                               th:errorclass="'form-control alert-danger'">
+                        <!-- Display error -->
+                        <small class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                    </div>
+
+                    <div>
+                        <label class="mt-3" for="lastName">LastName</label>
+                    </div>
+                    <div>
+                        <input class="form-control text-center"
+                               id="lastName"
+                               type="text"
+                               placeholder="Johnson"
+                               th:field="*{lastName}"
+                               th:errorclass="'form-control alert-danger'">
+                        <!-- Display error -->
+                        <small class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></small>
+                    </div>
+
+
+                    <div>
+                        <label class="mt-3" for="email">Email</label>
+                    </div>
+                    <div>
+                        <input class="text-center form-control"
+                               id="email"
+                               type="email"
+                               placeholder="test@gmail.com"
+                               th:field="*{email}"
+                               th:errorclass="'form-control alert-danger'">
+                        <!-- Display error -->
+                        <small class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+                    </div>
+
+                    <div>
+                        <label class="mt-3" for="createdAt">Created at</label>
+                    </div>
+                    <div>
+                        <input placeholder="dd/MM/yyyy"
+                               class="form-control text-center"
+                               id="createdAt"
+                               type="text"
+                               th:field="*{createdAt}"
+                               th:errorclass="'form-control alert-danger'">
+                        <!-- Display error -->
+                        <small class="text-danger" th:if="${#fields.hasErrors('createdAt')}" th:errors="*{createdAt}"></small>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="profile_img">Profile photo</label>
+                    </div>
+                    <div>
+                        <div th:if="${client.profile}" class="m-2">
+                            <img th:src="@{/uploads/} + ${client.profile}" alt="client.profile" class="img-thumbnail" width="80" />
+                        </div>
+                        <input id="profile_img" type="file" name="file" accept=".jpg, .jpeg, .png">
+                    </div>
+
+                    <input type="hidden" th:field="*{id}">
+                    <div class="mt-4 text-end">
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer th:replace="~{layout/global :: footer}"></footer>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{layout/global :: head}"></head>
+
+    <body>
+        <header th:replace="~{layout/global :: header}"></header>
+        <div class="container text-center">
+            <h1 class="p-2">Welcome to my App!</h1>
+
+            <div class="d-flex justify-content-center align-items-center m-2">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img th:src="@{/img/home/spring-logo.png}" class="d-block img-thumbnail" style="width:600px; height:300px;" alt="spring-logo">
+                        </div>
+                        <div class="carousel-item">
+                            <img th:src="@{/img/home/thymeleaf-logo.png}" class="d-block img-thumbnail" style="width:600px; height:300px;" alt="thymeleaf-logo">
+                        </div>
+                        <div class="carousel-item">
+                            <img th:src="@{/img/home/bootstrap-logo.png}" class="d-block img-thumbnail" style="width:600px; height:300px;" alt="bootstrap-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-primary" th:href="@{/list}">Show clients</a>
+        </div>
+        <footer th:replace="~{layout/global :: footer}"></footer>
+    </body>
+</html>

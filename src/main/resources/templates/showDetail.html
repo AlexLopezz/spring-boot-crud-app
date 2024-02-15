@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{layout/global :: head}"></head>
+    <body>
+        <header th:replace="~{layout/global :: header}"></header>
+        <div class="container d-flex p-4 justify-content-center">
+            <div class="card text-center shadow-lg"
+                 style="width: 24rem;">
+
+                <h3 th:text="${title}"></h3>
+
+                <img th:if="${client.profile != null}"
+                     th:src="@{/uploads/} + ${client.profile}"
+                     class="img-thumbnail"
+                     th:alt="${client.profile}">
+
+                <div class="card-body">
+                    <h4 class="card-title" >Name</h4>
+                    <p class="card-text" th:text="${client.name}"></p>
+
+                    <h4 class="card-title" >LastName</h4>
+                    <p class="card-text" th:text="${client.lastName}"></p>
+
+                    <h4 class="card-title">Email</h4>
+                    <p class="card-text" th:text="${client.email}"></p>
+
+                    <h4 class="card-title">Is client since: </h4>
+                    <p class="card-text" th:text="${#dates.format(client.createdAt, 'dd/MM/yyyy')}"></p>
+
+                    <a class="btn btn-success" th:href="@{/form/} + ${client.id}">
+                        <img th:src="@{/img/edit.png}" alt="edit-icon" width="10" height="10" />
+                    </a>
+                    <a th:href="@{/list}" class="btn btn-primary">Back</a>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="~{layout/global :: footer}"></footer>
+    </body>
+</html>
