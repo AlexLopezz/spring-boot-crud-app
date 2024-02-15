@@ -28,7 +28,7 @@ Open a new terminal and follow these steps:
 # Done!
 ##### Go to your web browser and type this link:  http://localhost:8080/
 
-* Do you want stop thins container? ``` $ docker stop spring-mvc-crud-app  ```
+* Do you want stop this container? ``` $ docker stop spring-mvc-crud-app  ```
 * Do you want to delete this container? ``` $ docker rm spring-mvc-crud-app ```
 * Do you want to delete the docker image? ``` $ docker rmi spring-boot-app:v1.0 ```
 
