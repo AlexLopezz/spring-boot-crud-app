@@ -1,6 +1,7 @@
 package com.alexdev.app.springbootdatajpa.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 /**
@@ -15,7 +16,8 @@ public class HomeController {
      * @return Vista HTML correspondiente.
      */
     @GetMapping
-    public String homeView(){
+    public String homeView(Model model){
+        model.addAttribute("title", "Welcome!");
         return "index";
     }
 }
