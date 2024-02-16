@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     /**
      * Entrypoint de nuestra pagina principal
-     * @return Vista HTML correspondiente.
+     * @param model Servira para pasar atributos a nuestra vista.
+     * @return Vista HTML correspondiente
      */
     @GetMapping
     public String homeView(Model model){
