@@ -1,5 +1,8 @@
+<p align="center">
+ <img src="https://github.com/AlexLopezz/spring-boot-crud-app/assets/90531107/389850c3-c739-4958-b1c6-d1690f915783" style="display:block; margin:auto;" width="400" height="150">
+</p>
 
-# Welcome to my SpringBoot MVC Crud App!
+<h1 align="center">Welcome to my SpringBoot MVC Crud App!</h1>
 
 ## Technologies used:
 * SpringBoot 3.1.8
