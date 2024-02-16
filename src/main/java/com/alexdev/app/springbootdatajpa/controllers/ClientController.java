@@ -217,7 +217,9 @@ public class ClientController {
     public String deleteAllRecords(){
         uploadFileService.deleteAll();
         service.deleteAll();
-
+        try {
+            uploadFileService.init();
+        }catch (IOException ignored){ };
         return "redirect:/list";
     }
 }
