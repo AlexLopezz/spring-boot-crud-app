@@ -35,4 +35,4 @@ Open a new terminal and follow these steps:
 
 ### **[DOCKER IMAGE - ALTERNATIVE]**
 **I also have this same image uploaded to docker**... So if you want to pull my docker image from Docker Hub **run this command**:
-* ``` $ docker pull dockeralexdev/spring-boot-crud-app ```
+* ``` $ docker pull dockeralexdev/spring-boot-crud-app:v2.0 ```
